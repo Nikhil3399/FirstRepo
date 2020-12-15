@@ -44,4 +44,9 @@ public class HomeController {
     public void deleteItem(@PathVariable Integer id) {
     	dao.deleteById(id);
     }
+    
+    @RequestMapping(value = "/test/{id}")
+    public Optional<Employee> getTest(@PathVariable ("id")int id) {
+		return dao.findById(id);
+    }
 }
